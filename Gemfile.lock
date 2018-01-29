@@ -60,11 +60,7 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-<<<<<<< HEAD
-    haml (5.0.3)
-=======
     haml (5.0.4)
->>>>>>> master
       temple (>= 0.8.0)
       tilt
     haml-rails (1.0.0)
@@ -188,12 +184,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   erb2haml
-<<<<<<< HEAD
-  haml-rails (~> 1.0)
-=======
   font-awesome-rails
   haml-rails
->>>>>>> master
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
