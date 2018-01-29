@@ -29,7 +29,6 @@ Things you may want to cover:
 	|name|string|null: false|
 	|email|string|null: false|unique: true|
 	|password|string|null: false|
-	|user_group_id|integer|
 
 	### Assosiation
 	- belongs_to :user_group
@@ -52,7 +51,7 @@ Things you may want to cover:
 	## groupsテーブル
 	|Column|Type|Options|
 	|------|----|-------|
-	|group_name|string|null: false|
+	|name|string|null: false|
 	|user_group_id|integer|null: false, foreign_key: true|
 
 	### Assosiation
