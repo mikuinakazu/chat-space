@@ -23,49 +23,49 @@ Things you may want to cover:
 
 * ...
 
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|email|string|null: false|unique: true|
-|password|string|null: false|
-|user_group_id|integer|
+	## usersテーブル
+	|Column|Type|Options|
+	|------|----|-------|
+	|name|string|null: false|
+	|email|string|null: false|unique: true|
+	|password|string|null: false|
+	|user_group_id|integer|
 
-### Assosiation
-- belongs_to :user_group
-- has_many :comments
-
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|body|text|
-|image|string|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Assosiation
-- belongs_to :user
-- belongs_to :group
+	### Assosiation
+	- belongs_to :user_group
+	- has_many :comments
 
 
-## groupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|group_name|string|null: false|
-|user_group_id|integer|null: false, foreign_key: true|
+	## commentsテーブル
+	|Column|Type|Options|
+	|------|----|-------|
+	|body|text|
+	|image|string|
+	|group_id|integer|null: false, foreign_key: true|
+	|user_id|integer|null: false, foreign_key: true|
 
-### Assosiation
-- belongs_to :user_group
-- has_many :comments
+	### Assosiation
+	- belongs_to :user
+	- belongs_to :group
 
 
-## user_groupテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+	## groupsテーブル
+	|Column|Type|Options|
+	|------|----|-------|
+	|group_name|string|null: false|
+	|user_group_id|integer|null: false, foreign_key: true|
 
-### Assosiation
-- has_many :users
-- has_many :groups
+	### Assosiation
+	- belongs_to :user_group
+	- has_many :comments
+
+
+	## user_groupテーブル
+	|Column|Type|Options|
+	|------|----|-------|
+	|user_id|integer|null: false, foreign_key: true|
+	|group_id|integer|null: false, foreign_key: true|
+
+	### Assosiation
+	- has_many :users
+	- has_many :groups
