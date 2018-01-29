@@ -10,7 +10,8 @@ module ChatSpace
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    # -- all .rb files in that directory are automatically loaded
+    #rails g contollerした時に不要なファイルを作らない
     config.generators do |g|
       g.javascripts false
       g.helper false

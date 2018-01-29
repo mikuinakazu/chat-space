@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    = stylesheet_link_tag    'messages', media: 'all', 'data-turbolinks-track': 'reload'
+
+  %body
+    .sidebar_box
+      .name_box
+        %p.name_box__name 名前
+        = link_to root_path do
+          %i.name_box__fa.fa-pencil-square-o
+      .group_box
+        %p.group_box__name グループ名
+        %p.group_box__text グループの説明
+
+    .main-screen_wrapper
+      .main_screen
+        .group_name_screen
+        .chat_screen
+        .input_screen
