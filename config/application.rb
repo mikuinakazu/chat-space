@@ -13,9 +13,9 @@ module ChatSpace
     # -- all .rb files in that directory are automatically loaded.
   end
 
-  config.generators do |g|
-      g.javascripts false
-      g.helper false
-      g.test_framework false
-  end
+  # config.generators do |g|
+  #     g.javascripts false
+  #     g.helper false
+  #     g.test_framework false
+  # end
 end
