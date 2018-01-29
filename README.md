@@ -1,4 +1,5 @@
-	## usersテーブル
+
+  ## usersテーブル
 	|Column|Type|Options|
 	|------|----|-------|
 	|name|string|null: false|
@@ -42,3 +43,4 @@
 	### Assosiation
 	- has_many :users
 	- has_many :groups
+
