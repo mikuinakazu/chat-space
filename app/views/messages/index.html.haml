@@ -8,12 +8,12 @@
     %p.message_box メッセージが送信されました。
     .sidebar_box
       .name_box
-        .name_box__.name_content
-          %p.name_box__.name_content__name 名前
+        .name_box__content
+          %p.name_box__content--name 名前
           = link_to root_path do
-            %i.name_box__.name_content__.fa.fa-cog
+            %i.name_box__content--icon.fa.fa-cog
           = link_to root_path do
-            %i.name_box__.name_content__.fa.fa-pencil-square-o
+            %i.name_box__content--icon.fa.fa-pencil-square-o
       .group_box_1
         %p.group_box1__name グループ名1
         %p.group_box1__text まだメッセージはありません
@@ -40,5 +40,8 @@
       .input_screen
         %p.input_screen__text Type a message
         %p.input_screen__send_button Send
-        = link_to root_path do
-          %i.input_screen___.fa.fa-picture-o
+        %input#upload{type: "file"}
+        / = link_to root_path do
+        %label{for: "upload"}
+          %i.input_screen__.fa.fa-picture-o
+        }

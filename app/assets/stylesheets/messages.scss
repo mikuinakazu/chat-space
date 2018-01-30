@@ -1,7 +1,9 @@
+$blue_color: #38AEF0;
+
 .message_box {
 	color: white;
 	text-align: center;
-	background-color: #38AEF0;
+	background-color: $blue_color;
 }
 
 .sidebar_box {
@@ -15,22 +17,22 @@
 		height: 100px;
 		width: 100%;
 		background-color: #253141;
-		  &__.name_content {
+		  &__content {
 	        width: 100%;
 	        height: 50px;
 	        padding-top: 25px;
-	            &__name {
+	            &--name {
 			    padding-left: 20px;
 			    line-height: 50px;
 			    font-size: 16px;
 			    float: left;
 		        }
-		        &__.fa.fa-pencil-square-o {
+		        &--icon.fa.fa-pencil-square-o {
 			    float: right;
 			    line-height: 50px;
 			    color: #FFFFFF;
 		        }
-		        &__.fa.fa-cog {
+		        &--icon.fa.fa-cog {
 			    float: right;
 			    line-height: 50px;
 			    padding-right: 40px;
@@ -90,8 +92,7 @@
 
 	.main_screen {
 		height: 540px;
-		margin-left: 40px;
-		margin-right: 40px;
+		margin: 0 40px;
 		background-color: blue;
 		clear: both;
 
@@ -122,8 +123,8 @@
 		      	padding: 8px 20px;
 		      	margin-top: 28px;
 		      	border: 1px solid #ccc;
-		      	color: #38AEF0;
-		      	border-color: #38AEF0;
+		      	color: $blue_color;
+		      	border-color: $blue_color;
 		      }
 	      }
 	    }
@@ -179,22 +180,26 @@
 			display: inline-block;
 			background-color: white;
 		}
-		&___.fa.fa-picture-o {
+		&__.fa.fa-picture-o {
 			color: black;
 			margin: 20px 10px 0 0;
 			padding: 17px 10px 17px 20px;
 			background-color: white;
 
 	    }
+	    input {
+	    	display: none;
+	    }
+        
 	    &__send_button {
 		  	float: right;
 		  	line-height: 48px;
-		  	padding: 0 30px 0 30px;
+		  	padding: 0 30px;
 		  	// padding-right: 30px;
 		  	margin: 20px 40px 0 15px;
 		    border: 1px solid #ccc;
-		    border-color: #38AEF0;
-		    background-color: #38AEF0;
+		    border-color: $blue_color;
+		    background-color: $blue_color;
 		    color: white;
 		}
 	    // }
