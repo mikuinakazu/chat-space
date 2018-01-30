@@ -5,17 +5,40 @@
     = stylesheet_link_tag    'messages', media: 'all', 'data-turbolinks-track': 'reload'
 
   %body
+    %p.message_box メッセージが送信されました。
     .sidebar_box
       .name_box
-        %p.name_box__name 名前
-        = link_to root_path do
-          %i.name_box__fa.fa-pencil-square-o
-      .group_box
-        %p.group_box__name グループ名
-        %p.group_box__text グループの説明
+        .name_box__.name_content
+          %p.name_box__.name_content__name 名前
+          = link_to root_path do
+            %i.name_box__.name_content__.fa.fa-cog
+          = link_to root_path do
+            %i.name_box__.name_content__.fa.fa-pencil-square-o
+      .group_box_1
+        %p.group_box1__name グループ名1
+        %p.group_box1__text まだメッセージはありません
+      .group_box_2
+        %p.group_box2__name グループ名2
+        %p.group_box2__text まだメッセージはありません
 
-    .main-screen_wrapper
+    .main_screen_wrapper
       .main_screen
         .group_name_screen
+          .group_name_screen__.group_content
+            %p.group_name_screen__.group_content__name sampleグループ
+            %p.group_name_screen__.group_content__edit_button edit
+            %p.group_name_screen__members Members: メンバー1、メンバー2
         .chat_screen
-        .input_screen
+          .chat_screen__.chat_content
+            %p.chat_screen__.chat_content__name チャットメンバー1
+            %p.chat_screen__.chat_content__date 2018/01/01 12:34:56
+            %p.chat_screen__text チャット内容1
+          .chat_screen__.chat_content
+            %p.chat_screen__.chat_content__name チャットメンバー2
+            %p.chat_screen__.chat_content__date 2018/01/12 12:34:56
+            %p.chat_screen__text チャット内容2
+      .input_screen
+        %p.input_screen__text Type a message
+        %p.input_screen__send_button Send
+        = link_to root_path do
+          %i.input_screen___.fa.fa-picture-o
