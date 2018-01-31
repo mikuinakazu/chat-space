@@ -32,16 +32,18 @@
           }
       }
   }
-  .group_box1 {
+  .group_box {
     &__name {
       padding-top: 20px;
       padding-left: 20px;
       padding-bottom: 5px;
       font-size: 15px;
+      color: $white;
     }
     &__text {
       padding-left: 20px;
       font-size: 11px;
+      color: $white;
     }
   }
 }

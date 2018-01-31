@@ -8,12 +8,12 @@
       %i.name_box__content--icon.fa.fa-cog
       = link_to new_group_path do
         %i.name_box__content--icon.fa.fa-pencil-square-o
-  .group_box_1
+  .group_box
     - current_user.groups.each do |group|
       = link_to group_messages_path(group) do
-        %p.group_box1__name
+        %p.group_box__name
           = group.name
-        %p.group_box1__text まだメッセージはありません
+        %p.group_box__text まだメッセージはありません
   / .group_box_2
   /   %p.group_box2__name グループ名2
   /   %p.group_box2__text まだメッセージはありません
