@@ -33,7 +33,8 @@
   .input_screen
     %p.input_screen__text Type a message
     %p.input_screen__send_button Send
+    / ↓↓↓uploadというid属性がついた<input type="file">タブ(これで画像選択ボタンが出る)をhamlで書くとこうなる。
     %input#upload{type: "file"}
-    / = link_to root_path do
+    / ↓↓↓上記のuploadというid属性を指定してlabelを作っている。
     %label{for: "upload"}
       %i.input_screen__.fa.fa-picture-o
