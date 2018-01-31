@@ -8,6 +8,7 @@
 
 	### Assosiation
 	- has_many :groups, through: group_users
+	- has_many :user_groups
 	- has_many :comments
 
 
@@ -31,10 +32,11 @@
 
 	### Assosiation
 	- has_many :users, through: group_users
+	- has_many :user_groups
 	- has_many :comments
 
 
-	## user_groupテーブル
+	## user_groupsテーブル
 	|Column|Type|Options|
 	|------|----|-------|
 	|user_id|integer|null: false, foreign_key: true|

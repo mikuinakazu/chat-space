@@ -1,19 +1,18 @@
-%p.message_box メッセージが送信されました。
-.sidebar_box
-  .name_box
-    .name_box__content
-      %p.name_box__content--name 名前
-      = link_to root_path do
-        %i.name_box__content--icon.fa.fa-cog
-      = link_to root_path do
-        %i.name_box__content--icon.fa.fa-pencil-square-o
-    .group_box_1
-      %p.group_box1__name グループ名1
-      %p.group_box1__text まだメッセージはありません
-    .group_box_2
-      %p.group_box2__name グループ名2
-      %p.group_box2__text まだメッセージはありません
-
+/ .sidebar_box
+/   .name_box
+/     .name_box__content
+/       %p.name_box__content--name 名前
+/       = link_to root_path do
+/         %i.name_box__content--icon.fa.fa-cog
+/       = link_to root_path do
+/         %i.name_box__content--icon.fa.fa-pencil-square-o
+/     .group_box_1
+/       %p.group_box1__name グループ名1
+/       %p.group_box1__text まだメッセージはありません
+/     .group_box_2
+/       %p.group_box2__name グループ名2
+/       %p.group_box2__text まだメッセージはありません
+= render partial: "devise/shared/side_bar"
 .main_screen_wrapper
   .main_screen
     .group_name_screen

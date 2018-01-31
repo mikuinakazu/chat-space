@@ -1,28 +1,47 @@
-/ ユーザー編集ページに遷移するためのパスを追加
-.side-bar
-  .header
-    %h3.header__name
-      = current_user.name
-    %ul.header__lists
-      %li.list
-        = link_to new_groups_path do
-          = fa_icon 'pencil-square-o', class: 'icon'
-      %li.list
-        = link_to edit_user_path do
-          = fa_icon 'cog', class: 'icon'
-  .groups
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
+/ 下記は自分で書いたサイドバーのhaml
+.sidebar_box
+  .name_box
+    .name_box__content
+      %p.name_box__content--name
+        = current_user.name
+        / 後で↓↓↓のアイコンにedit_user_pathのリンク貼らないといけない。
+      %i.name_box__content--icon.fa.fa-cog
+      = link_to new_group_path do
+        %i.name_box__content--icon.fa.fa-pencil-square-o
+  .group_box_1
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        %p.group_box1__name
+          = group.name
+        %p.group_box1__text まだメッセージはありません
+  / .group_box_2
+  /   %p.group_box2__name グループ名2
+  /   %p.group_box2__text まだメッセージはありません
+/ ユーザー編集ページに遷移するためのパスを追加。下記は模範解答
+/ .side-bar
+/   .header
+/     %h3.header__name
+/       = current_user.name
+/     %ul.header__lists
+/       %li.list
+/         = link_to new_groups_path do
+/           = fa_icon 'pencil-square-o', class: 'icon'
+/       %li.list
+/         = link_to edit_user_path do
+/           = fa_icon 'cog', class: 'icon'
+/   .groups
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
