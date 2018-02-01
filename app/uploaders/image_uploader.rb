@@ -1,7 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
   # MiniMagick経由で画像をリサイズするための記述
   include CarrierWave::MiniMagick
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [100, 100]
 
   # Choose what kind of storage to use for this uploader:
   storage :file

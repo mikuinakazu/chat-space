@@ -7,7 +7,9 @@
       %p.group_name_screen__content--name
         = @group.name
       %p.group_name_screen__content--edit_button edit
-      %p.group_name_screen__members Members: メンバー1、メンバー2、メンバー3
+      - @group.users.each do |member|
+        %p.group_name_screen__members
+          = member.name
   / チャット表示部分
   = render 'messages/message'
   / フッター部分
