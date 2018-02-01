@@ -1,20 +1,13 @@
-.message_box {
-	color: $white;
-	text-align: center;
-	background-color: $light_gray;
-}
-// index画面の右側
-// .main_screen_wrapper {
-// 	height: 100%;
-// 	width: 1066px;
-// 	background-color: white;
-// 	float: left;
-
+// .message_box {
+// 	color: $white;
+// 	text-align: center;
+// 	background-color: $light_gray;
+// }
 .main_screen {
 	height: 645px;
 	width: calc(100% - 300px);
 	// margin: 0px 40px;
-	background-color: blue;
+	background-color: $white;
 	float: left;
 
 	.group_name_screen {
@@ -24,24 +17,30 @@
 		border-bottom-color: #eeeeee;
 		  &__content {
 	        width: 100%;
-	        height: 80px;
+	        height: 80%;
 	        background-color: white;
 	          &--name {
 				    font-size: 20px;
 				    color: #333333;
 				    display: inline-block;
-				    line-height: 50%;
-				    padding-top: 35px;
+				    line-height: 40px;
+				    padding: 35px 0 0 40px;
 			      }
 		      &--edit_button {
 		      	float: right;
 		      	padding: 8px 20px;
 		      	margin: 28px 40px 0 0;
 		      	border: 1px solid #ccc;
-		      	color: $light_gray;
-		      	border-color: $light_gray;
+		      	color: $light_blue;
+		      	border-color: $light_blue;
 	        }
       }
+      &__member {
+	      font-size: 12px;
+	      color: $light_gray;
+	      display: inline-block;
+	      padding-left: 40px;
+	    }
 	    &__members {
 	      font-size: 12px;
 	      color: $light_gray;
@@ -49,21 +48,22 @@
 	    }
     }
 	.chat_screen {
-		height: 410px;
-		width: 100%;
-		padding-top: 46px;
-		background-color: green;
+		height: 409px;
+		width: 90%;
+		padding: 46px 40px 0 40px;
+		background-color: #FAFAFA;
+    overflow: auto;
 		  &__text {
 		  	clear: both;
 		  	padding-top: 10px;
-		  	padding-bottom: 40px;
+		  	// padding-bottom: 40px;
 		  	font-size: 14px;
 		  	color: $black;
 		  }
 		  &__content {
 		  	width: 100%;
 	          &--name {
-	          	padding-right: 10px;
+	          	padding: 30px 10px 0 0;
 	          	display: inline-block;
 	          	float: left;
 	          	font-size: 16px;
@@ -73,32 +73,32 @@
 	          &--date {
 	          	float: left;
 	          	font-size: 12px;
+	          	padding-top: 30px;
 	          	color: $light_gray;
 	          }
 		  }
 	}
 	.input_screen {
-		background-color: pink;
+		background-color: $light_gray;
 		height: 90px;
 		width: 100%;
 		clear: both;
 		&__text {
-		  // margin: 20px 0 0 40px;
-		  // padding-left: 10px;
+		  margin: 20px 0 0 40px;
+		  padding-left: 10px;
 		  line-height: 50px;
 		  float: left;
-		  width: 75%;
-		  display: inline-block;
+		  width: 70%;
+		  display: block;
 		  background-color: white;
+		  box-sizing: border-box;
+		  border-style: none;
 		}
-		&__.fa.fa-picture-o {
+		&__icon {
 		  color: $black;
-		  margin: 20px 10px 0 0;
-		  padding: 17px 10px 17px 20px;
+		  margin: 20px 5px 0 0;
+		  padding: 17px 15px 17px 20px;
 		  background-color: white;
-	  }
-	  input {
-	    display: none;
 	  }
 	  &__send_button {
 	    float: right;
@@ -106,9 +106,12 @@
 	    padding: 0 30px;
 	    margin: 20px 40px 0 15px;
 	    border: 1px solid #ccc;
-	    border-color: $light_gray;
-	    background-color: $light_gray;
+	    border-color: $light_blue;
+	    background-color: $light_blue;
 	    color: $white;
+	  }
+	  &__hidden {
+	    display: none;
 	  }
 	}
 }

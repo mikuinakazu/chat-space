@@ -4,10 +4,10 @@
       %p.chat_screen__content--name
         = message.user.name
       %p.chat_screen__content--date
-        = message.created_at
+        = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
       %p.chat_screen__text
-        - if message.content.present?
-          = message.content
-          = image_tag message.image.url, size: '120*180' if message.image.present?
+        = message.content
+      %p.chat_screen__image
+        = image_tag message.image.url if message.image.present?
 
 

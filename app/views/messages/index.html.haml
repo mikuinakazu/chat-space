@@ -1,15 +1,16 @@
 = render 'devise/shared/side_bar'
 / ヘッダー部分
-/ .main_screen_wrapper
 .main_screen
   .group_name_screen
     .group_name_screen__content
       %p.group_name_screen__content--name
         = @group.name
-      %p.group_name_screen__content--edit_button edit
-      - @group.users.each do |member|
-        %p.group_name_screen__members
-          = member.name
+      = link_to edit_group_path (@group.id) do
+        %p.group_name_screen__content--edit_button edit
+    %p.group_name_screen__member Members:
+    - @group.users.each do |member|
+      %p.group_name_screen__members
+        = member.name
   / チャット表示部分
   = render 'messages/message'
   / フッター部分

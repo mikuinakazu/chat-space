@@ -4,9 +4,9 @@
     .name_box__content
       %p.name_box__content--name
         = current_user.name
-        / 後で↓↓↓のアイコンにedit_user_pathのリンク貼らないといけない。
-      %i.name_box__content--icon.fa.fa-cog
       = link_to new_group_path do
+        %i.name_box__content--icon.fa.fa-cog
+      = link_to edit_user_path(current_user.id) do
         %i.name_box__content--icon.fa.fa-pencil-square-o
   .group_box
     - current_user.groups.each do |group|

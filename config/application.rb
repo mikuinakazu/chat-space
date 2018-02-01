@@ -20,6 +20,7 @@ module ChatSpace
       g.assets false
       g.coffee false
     end
+    config.time_zone = 'Asia/Tokyo'
   end
 
 end
