@@ -1,0 +1,7 @@
+.input_screen
+=form_for [@group, @message] do |f|
+  = f.text_field :content, class: 'input_screen__text', placeholder: 'type a message'
+  = f.label :image, class: 'upload' do
+    = fa_icon 'picture-o', class: 'icon'
+  = f.file_field :image, class: 'hidden'
+  = f.submit 'Send', class: 'input_screen__send_button'

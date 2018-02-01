@@ -9,16 +9,16 @@
 	### Assosiation
 	- has_many :groups, through: group_users
 	- has_many :user_groups
-	- has_many :comments
+	- has_many :messages
 
 
-	## commentsテーブル
+	## messagesテーブル
 	|Column|Type|Options|
 	|------|----|-------|
-	|body|text|
+	|content|text|
 	|image|string|
-	|group_id|integer|null: false, foreign_key: true|
-	|user_id|integer|null: false, foreign_key: true|
+	|group_id|integer|foreign_key: true, index: true|
+	|user_id|integer|foreign_key: true, index: true|
 
 	### Assosiation
 	- belongs_to :user
@@ -33,7 +33,7 @@
 	### Assosiation
 	- has_many :users, through: group_users
 	- has_many :user_groups
-	- has_many :comments
+	- has_many :messages
 
 
 	## user_groupsテーブル

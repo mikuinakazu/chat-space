@@ -1,0 +1,12 @@
+.chat_screen
+  .chat_screen__content
+    %p.chat_screen__content--name
+      / = message.user.name
+    %p.chat_screen__content--date
+      / = format_posted_time(message.created_at)
+    %p.chat_screen__text
+      / - if message.content.present?
+      /   =message.content
+      / = iamge_tag message.image.url if message.image.present?
+
+
