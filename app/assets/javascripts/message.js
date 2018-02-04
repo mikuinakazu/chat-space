@@ -1,6 +1,5 @@
 $(function() {
     function buildHTML(message){
-      console.log(message.image)
     var html = `<div class="chat_screen__content">
                     <p class="chat_screen__content--name">
                     ${message.user_name}
@@ -21,7 +20,6 @@ $(function() {
   $('form').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    console.log(this);
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -35,6 +33,7 @@ $(function() {
       var html = buildHTML(data);
       $('.chat_screen').append(html)
       $('form').val('')
+      $('.chat_screen').animate({ scrollTop: $('.chat_screen')[0].scrollHeight });
     })
     .fail(function() {
       alert('error');
