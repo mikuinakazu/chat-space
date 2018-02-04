@@ -4,7 +4,7 @@
       %p.chat_screen__content--name
         = message.user.name
       %p.chat_screen__content--date
-        = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
+        = message.create_time
       %p.chat_screen__text
         = message.content
       %p.chat_screen__image
