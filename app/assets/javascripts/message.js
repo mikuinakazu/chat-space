@@ -33,7 +33,7 @@ $(function() {
       var html = buildHTML(data);
       $('.chat_screen').append(html)
       $('form').val('')
-      $('.chat_screen').animate({ scrollTop: $('.chat_screen')[0].scrollHeight });
+      $('.chat_screen').animate({ scrollTop:$('.chat_screen__content')[0].scrollHeight })
     })
     .fail(function() {
       alert('error');
