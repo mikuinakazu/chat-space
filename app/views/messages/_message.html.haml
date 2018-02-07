@@ -1,6 +1,6 @@
 .chat_screen
-  .chat_screen__content
-    - @messages.each do |message|
+  - @messages.each do |message|
+    .chat_screen__content{ "data-id": message.id }
       %p.chat_screen__content--name
         = message.user.name
       %p.chat_screen__content--date

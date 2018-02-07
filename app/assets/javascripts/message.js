@@ -1,6 +1,7 @@
 $(function() {
-    function buildHTML(message){
-    var html = `<div class="chat_screen__content">
+  function buildHTML(message){
+    var image = message.image? `<img src="${message.image}">` : "";
+    var html = `<div class="chat_screen__content" data-id="${message.id}">
                     <p class="chat_screen__content--name">
                     ${message.user_name}
                     </p>
@@ -11,11 +12,44 @@ $(function() {
                     ${message.content}
                     </p>
                     <p class="chat_screen__image">
-                      <image src="${message.image}">
+                    ${image}
                     </p>
                   </div>`
     return html;
   }
+
+  function autoReload(){
+    var lastContent = $('.chat_screen__content').last();
+    var lastId = lastContent.data('id');
+
+    var url = location.href;
+    if (!(url.includes('groups' && 'messages'))){
+      return
+    };
+
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        last_id: lastId
+      },
+      dataType: 'json'
+    })
+    .done(function(data) {
+      data.forEach(function(datum) {
+        var html = buildHTML(datum);
+        $('.chat_screen').append(html)
+      })
+    })
+    .fail(function() {
+      alert('error');
+    })
+  }
+
+
+  setInterval(function() {
+    autoReload();
+  }, 5000);
 
   $('form').on('submit', function(e) {
     e.preventDefault();
@@ -33,10 +67,11 @@ $(function() {
       var html = buildHTML(data);
       $('.chat_screen').append(html)
       $('form').val('')
-      $('.chat_screen').animate({ scrollTop:$('.chat_screen__content')[0].scrollHeight })
+      $('.chat_screen').animate({ scrollTop:$('.chat_screen')[0].scrollHeight })
     })
     .fail(function() {
       alert('error');
     })
   })
 })
+
