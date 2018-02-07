@@ -5,13 +5,9 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    # @last_message = @messages.last
-    # htmlとjsonどっちを読むかはどのように判断？？
-    # last_id = 画面に表示されている現状最新のid
       respond_to do |format|
         format.html
         format.json { @differences = @messages.where('id > ?', params[:last_id]) }
-        # binding.pry
       end
   end
 

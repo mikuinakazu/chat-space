@@ -23,11 +23,10 @@ $(function() {
   }
 
   function autoReload(){
-    var last_content = $('.chat_screen__content').last();
-    var last_id = last_content.data('id');
+    var lastContent = $('.chat_screen__content').last();
+    var lastId = lastContent.data('id');
 
     var url = location.href;
-    console.log(url);
     if (!(url.includes('groups' && 'messages'))){
       return
     };
@@ -36,7 +35,7 @@ $(function() {
       url: location.href,
       type: 'GET',
       data: {
-        last_id: last_id
+        last_id: lastId
       },
       dataType: 'json'
     })
@@ -50,19 +49,12 @@ $(function() {
       alert('error');
     })
   }
-  //5秒毎に自動更新する
-  //今いるURLがmessages#indexならsetIntervalを呼び、そうでなければsetIntervalは解除する！！！
-  // ページ移動した時にうまくいかない（リロードするとうまくいく）
-  // var url = location.href
-  // console.log(url)
 
-  // if (url.includes('groups' && 'messages')) {
+
   setInterval(function() {
     autoReload();
   }, 5000);
-  // }
 
-  //sendボタンを押すとチャットを投稿する
   $('form').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
