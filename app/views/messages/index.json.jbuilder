@@ -1,7 +1,7 @@
-json.array! @messages do |message|
-  json.content message.content
-  json.id message.user.id
-  json.image message.image_url
-  json.user_name message.user.name
-  json.date message.create_time
+json.array! @differences do |difference|
+  json.content   difference.content
+  json.id        difference.id
+  json.image     difference.image_url
+  json.user_name difference.user.name
+  json.date      difference.create_time
 end
