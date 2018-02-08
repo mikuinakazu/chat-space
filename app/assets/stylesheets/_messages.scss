@@ -1,31 +1,25 @@
-// .message_box {
-// 	color: $white;
-// 	text-align: center;
-// 	background-color: $light_gray;
-// }
 .main_screen {
-	height: 645px;
+  height: 450px;
 	width: calc(100% - 300px);
-	// margin: 0px 40px;
+	padding-bottom: 90px;
 	background-color: $white;
 	float: left;
-
 	.group_name_screen {
 		height: 100px;
 		width: 100%;
 		background-color: white;
 		border-bottom-color: #eeeeee;
 		  &__content {
-	        width: 100%;
-	        height: 80%;
-	        background-color: white;
-	          &--name {
+        width: 100%;
+        height: 80%;
+        background-color: white;
+          &--name {
 				    font-size: 20px;
 				    color: #333333;
 				    display: inline-block;
 				    line-height: 40px;
 				    padding: 35px 0 0 40px;
-			      }
+		      }
 		      &--edit_button {
 		      	float: right;
 		      	padding: 8px 20px;
@@ -48,15 +42,14 @@
 	    }
     }
 	.chat_screen {
-		height: 409px;
+		height: 410px;
 		width: 90%;
 		padding: 46px 40px 0 40px;
 		background-color: #FAFAFA;
-    overflow: scroll;
+    overflow: auto;
 		  &__text {
 		  	clear: both;
 		  	padding-top: 10px;
-		  	// padding-bottom: 40px;
 		  	font-size: 14px;
 		  	color: $black;
 		  }
@@ -80,6 +73,7 @@
 	}
 	.input_screen {
 		background-color: $light_gray;
+		position: fixed;
 		height: 90px;
 		width: 100%;
 		clear: both;
@@ -88,7 +82,7 @@
 		  padding-left: 10px;
 		  line-height: 50px;
 		  float: left;
-		  width: 70%;
+		  width: 55%;
 		  display: block;
 		  background-color: white;
 		  box-sizing: border-box;
@@ -101,10 +95,9 @@
 		  background-color: white;
 	  }
 	  &__send_button {
-	    float: right;
 	    line-height: 48px;
 	    padding: 0 30px;
-	    margin: 20px 40px 0 15px;
+	    margin: 20px 40px 0 70px;
 	    border: 1px solid #ccc;
 	    border-color: $light_blue;
 	    background-color: $light_blue;
@@ -115,4 +108,3 @@
 	  }
 	}
 }
-// }

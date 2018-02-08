@@ -51,27 +51,31 @@ $(function() {
     autoReload();
   }, 5000);
 
-  $('form').on('submit', function(e) {
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action')
-    $.ajax({
-      url: url,
-      type: 'POST',
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
+  var url = location.href;
+  if (url.includes('groups' && 'messages')){
+    $('form').on('submit', function(e) {
+      console.log('成功！！！')
+      e.preventDefault();
+      var formData = new FormData(this);
+      var url = $(this).attr('action')
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(data) {
+        var html = buildHTML(data);
+        $('.chat_screen').append(html);
+        $('form').val('');
+        $('.chat_screen').animate({ scrollTop:$('.chat_screen')[0].scrollHeight });
+      })
+      .fail(function() {
+        alert('error');
+      })
     })
-    .done(function(data) {
-      var html = buildHTML(data);
-      $('.chat_screen').append(html)
-      $('form').val('')
-      $('.chat_screen').animate({ scrollTop:$('.chat_screen')[0].scrollHeight })
-    })
-    .fail(function() {
-      alert('error');
-    })
-  })
+  };
 })
 
